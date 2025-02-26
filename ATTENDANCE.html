@@ -284,7 +284,8 @@
         tableHTML += `<td class='emp-id'>${empIdVal}</td>`;
         tableHTML += `<td class='name-cell'>${nameVal}</td>`;
         for (let day = 1; day <= numDays; day++) {
-          const dayVal = savedData[`row${i}-day${day}`] || "P";
+          // Remove default "P". Show only the saved data if available.
+          const dayVal = savedData[`row${i}-day${day}`] || "";
           tableHTML += `<td class='day-cell'>${dayVal}</td>`;
         }
         tableHTML += "</tr>";
@@ -312,6 +313,8 @@
   </script>
 </body>
 </html>
+
+
 
 
 
